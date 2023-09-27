@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>com.itsyx</groupId>
+        <artifactId>im-system</artifactId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
+
+    <artifactId>tcp</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <name>tcp</name>
+
+    <properties>
+        <java.version>1.8</java.version>
+    </properties>
+    <dependencies>
+        <!-- commons -->
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
+        </dependency>
+
+        <!-- 参数校验 -->
+        <dependency>
+            <groupId>org.hibernate.validator</groupId>
+            <artifactId>hibernate-validator</artifactId>
+            <version>8.0.0.Final</version>
+        </dependency>
+
+
+        <dependency>
+            <groupId>com.github.sgroschupf</groupId>
+            <artifactId>zkclient</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.itsyx</groupId>
+            <artifactId>common</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+        </dependency>
+
+        <!-- codec -->
+        <dependency>
+            <groupId>com.itsyx</groupId>
+            <artifactId>codec </artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+        </dependency>
+
+
+
+        <!-- yaml解析 -->
+        <dependency>
+            <groupId>org.yaml</groupId>
+            <artifactId>snakeyaml</artifactId>
+        </dependency>
+
+        <!-- redisson -->
+        <dependency>
+            <groupId>org.redisson</groupId>
+            <artifactId>redisson</artifactId>
+        </dependency>
+
+        <!-- rabbitmq -->
+        <dependency>
+            <groupId>com.rabbitmq</groupId>
+            <artifactId>amqp-client</artifactId>
+        </dependency>
+
+        <!-- feign调用依赖 -->
+        <dependency>
+            <groupId>com.netflix.feign</groupId>
+            <artifactId>feign-core</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.netflix.feign</groupId>
+            <artifactId>feign-jackson</artifactId>
+        </dependency>
+
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>

@@ -1,0 +1,78 @@
+server:
+  port: 8000
+spring:
+  profiles:
+    active: dev
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/im-core?serverTimezone=UTC&useSSL=false&characterEncoding=UTF8
+    username: root
+    password: 862624436
+  rabbitmq:
+    host: 127.0.0.1
+    port: 5672
+    userName: syx
+    password: 862624436
+  redis:
+    host: 127.0.0.1
+    port: 6379
+
+# logger 配置
+logging:
+  config: classpath:logback-spring.xml
+
+mybatis-plus:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  mapper-locations: classpath:mapper/*.xml
+  global-config:
+    db-config:
+      update-strategy: NOT_EMPTY
+
+appconfig:
+  appId: 10000
+  privateKey: 123456
+  zkAddr: 127.0.0.1:2181 # zk连接地址
+  zkConnectTimeOut: 50000 #zk超时时间
+  imRouteWay: 1 # 路由策略1轮训 2随机 3hash
+  consistentHashWay: 1 # 如果选用一致性hash的话具体hash算法 1 TreeMap 2 自定义Map
+  tcpPort: 9000 # tcp端口
+  webSocketPort: 19000 # webSocket端口
+  needWebSocket: true #是否需要开启webSocket
+  loginModel: 1
+  messageRecallTimeOut : 1200000000 #消息可撤回时间，单位毫秒
+  #  *                多端同步模式：1 只允许一端在线，手机/电脑/web 踢掉除了本client+imel的设备
+  #  *                            2 允许手机/电脑的一台设备 + web在线 踢掉除了本client+imel的非web端设备
+  #  *                            3 允许手机和电脑单设备 + web 同时在线 踢掉非本client+imel的同端设备
+  #  *                            4 允许所有端多设备登录 不踢任何设备
+  groupMaxMemberCount: 500
+  sendMessageCheckFriend: false # 发送消息是否校验关系链
+  sendMessageCheckBlack: false # 发送消息是否校验黑名单
+  callbackUrl: http://127.0.0.1:8000/callback
+  modifyUserAfterCallback: false # 用户资料变更之后回调开关
+  addFriendAfterCallback: false # 添加好友之后回调开关
+  addFriendBeforeCallback: false # 添加好友之前回调开关
+  modifyFriendAfterCallback: false # 修改好友之后回调开关
+  deleteFriendAfterCallback: false # 删除好友之后回调开关
+  addFriendShipBlackAfterCallback: false #添加黑名单之后回调开关
+  deleteFriendShipBlackAfterCallback: false #删除黑名单之后回调开关
+  createGroupAfterCallback: false # 创建群聊之后回调开关
+  modifyGroupAfterCallback: false # 修改群聊之后回调开关
+  destroyGroupAfterCallback: false # 解散群聊之后回调开关
+  deleteGroupMemberAfterCallback: false # 删除群成员之后回调
+  addGroupMemberAfterCallback: false # 拉人入群之后回调
+  addGroupMemberBeforeCallback: false # 拉人入群之前回调
+  sendMessageAfterCallback: false # 发送单聊消息之后
+  sendMessageBeforeCallback: false # 发送单聊消息之前
+  sendGroupMessageAfterCallback: false # 发送群聊消息之后
+  sendGroupMessageBeforeCallback: false # 发送群聊消息之前
+  offlineMessageCount: 1000 #离线消息存储条数
+  deleteConversationSyncMode: 1 #1多段同步
+
+httpclient:
+  maxTotal: 100
+  defaultMaxPerRoute: 50
+  connectTimeout: 2000
+  connectionRequestTimeout: 2000
+  socketTimeout: 5000
+  staleConnectionCheckEnabled: true

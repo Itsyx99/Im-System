@@ -1,0 +1,525 @@
+2023-06-05 16:12:03 -HV000001: Hibernate Validator 6.2.5.Final
+2023-06-05 16:12:03 -Starting ServiceApplication using Java 1.8.0_74 on LAPTOP-2139FFKM with PID 24076 (D:\IdeaProject\im-system\service\target\classes started by syx in D:\IdeaProject\im-system)
+2023-06-05 16:12:03 -The following 1 profile is active: "dev"
+2023-06-05 16:12:03 -Multiple Spring Data modules found, entering strict repository configuration mode
+2023-06-05 16:12:03 -Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2023-06-05 16:12:03 -Finished Spring Data repository scanning in 6 ms. Found 0 Redis repository interfaces.
+2023-06-05 16:12:04 -Tomcat initialized with port(s): 8000 (http)
+2023-06-05 16:12:04 -Initializing ProtocolHandler ["http-nio-8000"]
+2023-06-05 16:12:04 -Starting service [Tomcat]
+2023-06-05 16:12:04 -Starting Servlet engine: [Apache Tomcat/9.0.75]
+2023-06-05 16:12:04 -Initializing Spring embedded WebApplicationContext
+2023-06-05 16:12:04 -Root WebApplicationContext: initialization completed in 964 ms
+2023-06-05 16:12:05 -Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'rabbitConnectionFactoryBeanConfigurer' defined in class path resource [org/springframework/boot/autoconfigure/amqp/RabbitAutoConfiguration$RabbitConnectionFactoryCreator.class]: Unexpected exception during bean creation; nested exception is java.lang.TypeNotPresentException: Type com.rabbitmq.client.impl.CredentialsRefreshService not present
+2023-06-05 16:12:05 -Stopping service [Tomcat]
+2023-06-05 16:12:05 -
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2023-06-05 16:12:05 -Application run failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'rabbitConnectionFactoryBeanConfigurer' defined in class path resource [org/springframework/boot/autoconfigure/amqp/RabbitAutoConfiguration$RabbitConnectionFactoryCreator.class]: Unexpected exception during bean creation; nested exception is java.lang.TypeNotPresentException: Type com.rabbitmq.client.impl.CredentialsRefreshService not present
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:555)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:955)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:920)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:583)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:147)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:731)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:408)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:307)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1303)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1292)
+	at com.itsyx.im.service.ServiceApplication.main(ServiceApplication.java:10)
+Caused by: java.lang.TypeNotPresentException: Type com.rabbitmq.client.impl.CredentialsRefreshService not present
+	at sun.reflect.generics.factory.CoreReflectionFactory.makeNamedType(CoreReflectionFactory.java:117)
+	at sun.reflect.generics.visitor.Reifier.visitClassTypeSignature(Reifier.java:125)
+	at sun.reflect.generics.tree.ClassTypeSignature.accept(ClassTypeSignature.java:49)
+	at sun.reflect.generics.visitor.Reifier.reifyTypeArguments(Reifier.java:68)
+	at sun.reflect.generics.visitor.Reifier.visitClassTypeSignature(Reifier.java:138)
+	at sun.reflect.generics.tree.ClassTypeSignature.accept(ClassTypeSignature.java:49)
+	at sun.reflect.generics.repository.ConstructorRepository.getParameterTypes(ConstructorRepository.java:94)
+	at java.lang.reflect.Executable.getGenericParameterTypes(Executable.java:283)
+	at java.lang.reflect.Method.getGenericParameterTypes(Method.java:283)
+	at org.springframework.core.MethodParameter.getGenericParameterType(MethodParameter.java:513)
+	at org.springframework.core.SerializableTypeWrapper$MethodParameterTypeProvider.getType(SerializableTypeWrapper.java:291)
+	at org.springframework.core.SerializableTypeWrapper.forTypeProvider(SerializableTypeWrapper.java:107)
+	at org.springframework.core.ResolvableType.forType(ResolvableType.java:1420)
+	at org.springframework.core.ResolvableType.forMethodParameter(ResolvableType.java:1341)
+	at org.springframework.core.ResolvableType.forMethodParameter(ResolvableType.java:1323)
+	at org.springframework.core.ResolvableType.forMethodParameter(ResolvableType.java:1290)
+	at org.springframework.beans.factory.config.DependencyDescriptor.getResolvableType(DependencyDescriptor.java:314)
+	at org.springframework.beans.factory.support.GenericTypeAwareAutowireCandidateResolver.checkGenericTypeMatch(GenericTypeAwareAutowireCandidateResolver.java:77)
+	at org.springframework.beans.factory.support.GenericTypeAwareAutowireCandidateResolver.isAutowireCandidate(GenericTypeAwareAutowireCandidateResolver.java:69)
+	at org.springframework.beans.factory.annotation.QualifierAnnotationAutowireCandidateResolver.isAutowireCandidate(QualifierAnnotationAutowireCandidateResolver.java:147)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.isAutowireCandidate(DefaultListableBeanFactory.java:864)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.isAutowireCandidate(DefaultListableBeanFactory.java:823)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.isAutowireCandidate(DefaultListableBeanFactory.java:806)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.findAutowireCandidates(DefaultListableBeanFactory.java:1572)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1354)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1311)
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:887)
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:791)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:541)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1352)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1195)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:582)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	... 14 common frames omitted
+Caused by: java.lang.ClassNotFoundException: com.rabbitmq.client.impl.CredentialsRefreshService
+	at java.net.URLClassLoader.findClass(URLClassLoader.java:381)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:424)
+	at sun.misc.Launcher$AppClassLoader.loadClass(Launcher.java:331)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:357)
+	at java.lang.Class.forName0(Native Method)
+	at java.lang.Class.forName(Class.java:348)
+	at sun.reflect.generics.factory.CoreReflectionFactory.makeNamedType(CoreReflectionFactory.java:114)
+	... 46 common frames omitted
+2023-06-05 16:12:46 -Starting ServiceApplication using Java 1.8.0_74 on LAPTOP-2139FFKM with PID 31228 (D:\IdeaProject\im-system\service\target\classes started by syx in D:\IdeaProject\im-system)
+2023-06-05 16:12:46 -HV000001: Hibernate Validator 6.2.5.Final
+2023-06-05 16:12:46 -The following 1 profile is active: "dev"
+2023-06-05 16:12:46 -Multiple Spring Data modules found, entering strict repository configuration mode
+2023-06-05 16:12:46 -Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2023-06-05 16:12:46 -Finished Spring Data repository scanning in 5 ms. Found 0 Redis repository interfaces.
+2023-06-05 16:12:46 -Tomcat initialized with port(s): 8000 (http)
+2023-06-05 16:12:46 -Initializing ProtocolHandler ["http-nio-8000"]
+2023-06-05 16:12:46 -Starting service [Tomcat]
+2023-06-05 16:12:46 -Starting Servlet engine: [Apache Tomcat/9.0.75]
+2023-06-05 16:12:47 -Initializing Spring embedded WebApplicationContext
+2023-06-05 16:12:47 -Root WebApplicationContext: initialization completed in 823 ms
+2023-06-05 16:12:47 -Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'rabbitConnectionFactoryBeanConfigurer' defined in class path resource [org/springframework/boot/autoconfigure/amqp/RabbitAutoConfiguration$RabbitConnectionFactoryCreator.class]: Unexpected exception during bean creation; nested exception is java.lang.TypeNotPresentException: Type com.rabbitmq.client.impl.CredentialsRefreshService not present
+2023-06-05 16:12:47 -Stopping service [Tomcat]
+2023-06-05 16:12:47 -
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2023-06-05 16:12:47 -Application run failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'rabbitConnectionFactoryBeanConfigurer' defined in class path resource [org/springframework/boot/autoconfigure/amqp/RabbitAutoConfiguration$RabbitConnectionFactoryCreator.class]: Unexpected exception during bean creation; nested exception is java.lang.TypeNotPresentException: Type com.rabbitmq.client.impl.CredentialsRefreshService not present
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:555)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:955)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:920)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:583)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:147)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:731)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:408)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:307)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1303)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1292)
+	at com.itsyx.im.service.ServiceApplication.main(ServiceApplication.java:10)
+Caused by: java.lang.TypeNotPresentException: Type com.rabbitmq.client.impl.CredentialsRefreshService not present
+	at sun.reflect.generics.factory.CoreReflectionFactory.makeNamedType(CoreReflectionFactory.java:117)
+	at sun.reflect.generics.visitor.Reifier.visitClassTypeSignature(Reifier.java:125)
+	at sun.reflect.generics.tree.ClassTypeSignature.accept(ClassTypeSignature.java:49)
+	at sun.reflect.generics.visitor.Reifier.reifyTypeArguments(Reifier.java:68)
+	at sun.reflect.generics.visitor.Reifier.visitClassTypeSignature(Reifier.java:138)
+	at sun.reflect.generics.tree.ClassTypeSignature.accept(ClassTypeSignature.java:49)
+	at sun.reflect.generics.repository.ConstructorRepository.getParameterTypes(ConstructorRepository.java:94)
+	at java.lang.reflect.Executable.getGenericParameterTypes(Executable.java:283)
+	at java.lang.reflect.Method.getGenericParameterTypes(Method.java:283)
+	at org.springframework.core.MethodParameter.getGenericParameterType(MethodParameter.java:513)
+	at org.springframework.core.SerializableTypeWrapper$MethodParameterTypeProvider.getType(SerializableTypeWrapper.java:291)
+	at org.springframework.core.SerializableTypeWrapper.forTypeProvider(SerializableTypeWrapper.java:107)
+	at org.springframework.core.ResolvableType.forType(ResolvableType.java:1420)
+	at org.springframework.core.ResolvableType.forMethodParameter(ResolvableType.java:1341)
+	at org.springframework.core.ResolvableType.forMethodParameter(ResolvableType.java:1323)
+	at org.springframework.core.ResolvableType.forMethodParameter(ResolvableType.java:1290)
+	at org.springframework.beans.factory.config.DependencyDescriptor.getResolvableType(DependencyDescriptor.java:314)
+	at org.springframework.beans.factory.support.GenericTypeAwareAutowireCandidateResolver.checkGenericTypeMatch(GenericTypeAwareAutowireCandidateResolver.java:77)
+	at org.springframework.beans.factory.support.GenericTypeAwareAutowireCandidateResolver.isAutowireCandidate(GenericTypeAwareAutowireCandidateResolver.java:69)
+	at org.springframework.beans.factory.annotation.QualifierAnnotationAutowireCandidateResolver.isAutowireCandidate(QualifierAnnotationAutowireCandidateResolver.java:147)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.isAutowireCandidate(DefaultListableBeanFactory.java:864)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.isAutowireCandidate(DefaultListableBeanFactory.java:823)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.isAutowireCandidate(DefaultListableBeanFactory.java:806)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.findAutowireCandidates(DefaultListableBeanFactory.java:1572)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1354)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1311)
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:887)
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:791)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:541)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1352)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1195)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:582)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	... 14 common frames omitted
+Caused by: java.lang.ClassNotFoundException: com.rabbitmq.client.impl.CredentialsRefreshService
+	at java.net.URLClassLoader.findClass(URLClassLoader.java:381)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:424)
+	at sun.misc.Launcher$AppClassLoader.loadClass(Launcher.java:331)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:357)
+	at java.lang.Class.forName0(Native Method)
+	at java.lang.Class.forName(Class.java:348)
+	at sun.reflect.generics.factory.CoreReflectionFactory.makeNamedType(CoreReflectionFactory.java:114)
+	... 46 common frames omitted
+2023-06-05 16:14:43 -Starting ServiceApplication using Java 1.8.0_74 on LAPTOP-2139FFKM with PID 30968 (D:\IdeaProject\im-system\service\target\classes started by syx in D:\IdeaProject\im-system)
+2023-06-05 16:14:43 -HV000001: Hibernate Validator 6.2.5.Final
+2023-06-05 16:14:43 -The following 1 profile is active: "dev"
+2023-06-05 16:14:44 -Multiple Spring Data modules found, entering strict repository configuration mode
+2023-06-05 16:14:44 -Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2023-06-05 16:14:44 -Finished Spring Data repository scanning in 5 ms. Found 0 Redis repository interfaces.
+2023-06-05 16:14:44 -Tomcat initialized with port(s): 8000 (http)
+2023-06-05 16:14:44 -Initializing ProtocolHandler ["http-nio-8000"]
+2023-06-05 16:14:44 -Starting service [Tomcat]
+2023-06-05 16:14:44 -Starting Servlet engine: [Apache Tomcat/9.0.75]
+2023-06-05 16:14:44 -Initializing Spring embedded WebApplicationContext
+2023-06-05 16:14:44 -Root WebApplicationContext: initialization completed in 754 ms
+2023-06-05 16:14:45 -Starting ProtocolHandler ["http-nio-8000"]
+2023-06-05 16:14:45 -Tomcat started on port(s): 8000 (http) with context path ''
+2023-06-05 16:14:45 -Started ServiceApplication in 1.963 seconds (JVM running for 2.643)
+2023-06-05 16:16:09 -Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-06-05 16:16:09 -Initializing Servlet 'dispatcherServlet'
+2023-06-05 16:16:09 -Completed initialization in 0 ms
+2023-06-05 16:26:37 -HV000001: Hibernate Validator 6.2.5.Final
+2023-06-05 16:26:37 -Starting ServiceApplication using Java 1.8.0_74 on LAPTOP-2139FFKM with PID 22712 (D:\IdeaProject\im-system\service\target\classes started by syx in D:\IdeaProject\im-system)
+2023-06-05 16:26:37 -The following 1 profile is active: "dev"
+2023-06-05 16:26:37 -Multiple Spring Data modules found, entering strict repository configuration mode
+2023-06-05 16:26:37 -Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2023-06-05 16:26:37 -Finished Spring Data repository scanning in 5 ms. Found 0 Redis repository interfaces.
+2023-06-05 16:26:38 -Tomcat initialized with port(s): 8000 (http)
+2023-06-05 16:26:38 -Initializing ProtocolHandler ["http-nio-8000"]
+2023-06-05 16:26:38 -Starting service [Tomcat]
+2023-06-05 16:26:38 -Starting Servlet engine: [Apache Tomcat/9.0.75]
+2023-06-05 16:26:38 -Initializing Spring embedded WebApplicationContext
+2023-06-05 16:26:38 -Root WebApplicationContext: initialization completed in 916 ms
+2023-06-05 16:26:39 -Starting ProtocolHandler ["http-nio-8000"]
+2023-06-05 16:26:39 -Tomcat started on port(s): 8000 (http) with context path ''
+2023-06-05 16:26:39 -Started ServiceApplication in 2.308 seconds (JVM running for 3.594)
+2023-06-05 16:26:56 -Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-06-05 16:26:56 -Initializing Servlet 'dispatcherServlet'
+2023-06-05 16:26:56 -Completed initialization in 0 ms
+2023-06-05 16:27:58 -HikariPool-1 - Starting...
+2023-06-05 16:27:58 -Registered driver with driverClassName=com.mysql.jdbc.Driver was not found, trying direct instantiation.
+2023-06-05 16:27:58 -HikariPool-1 - Start completed.
+2023-06-05 16:45:00 -HikariPool-1 - Shutdown initiated...
+2023-06-05 16:45:00 -HikariPool-1 - Shutdown completed.
+2023-06-05 16:45:04 -HV000001: Hibernate Validator 6.2.5.Final
+2023-06-05 16:45:04 -Starting ServiceApplication using Java 1.8.0_74 on LAPTOP-2139FFKM with PID 30248 (D:\IdeaProject\im-system\service\target\classes started by syx in D:\IdeaProject\im-system)
+2023-06-05 16:45:04 -The following 1 profile is active: "dev"
+2023-06-05 16:45:04 -Multiple Spring Data modules found, entering strict repository configuration mode
+2023-06-05 16:45:04 -Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2023-06-05 16:45:04 -Finished Spring Data repository scanning in 6 ms. Found 0 Redis repository interfaces.
+2023-06-05 16:45:05 -Tomcat initialized with port(s): 8000 (http)
+2023-06-05 16:45:05 -Initializing ProtocolHandler ["http-nio-8000"]
+2023-06-05 16:45:05 -Starting service [Tomcat]
+2023-06-05 16:45:05 -Starting Servlet engine: [Apache Tomcat/9.0.75]
+2023-06-05 16:45:05 -Initializing Spring embedded WebApplicationContext
+2023-06-05 16:45:05 -Root WebApplicationContext: initialization completed in 940 ms
+2023-06-05 16:45:06 -Starting ProtocolHandler ["http-nio-8000"]
+2023-06-05 16:45:06 -Tomcat started on port(s): 8000 (http) with context path ''
+2023-06-05 16:45:06 -Started ServiceApplication in 2.283 seconds (JVM running for 2.959)
+2023-06-05 16:45:09 -Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-06-05 16:45:09 -Initializing Servlet 'dispatcherServlet'
+2023-06-05 16:45:09 -Completed initialization in 1 ms
+2023-06-05 16:45:31 -HikariPool-1 - Starting...
+2023-06-05 16:45:31 -Registered driver with driverClassName=com.mysql.jdbc.Driver was not found, trying direct instantiation.
+2023-06-05 16:45:31 -HikariPool-1 - Start completed.
+2023-06-05 17:07:10 -HikariPool-1 - Shutdown initiated...
+2023-06-05 17:07:10 -HikariPool-1 - Shutdown completed.
+2023-06-05 17:07:16 -HV000001: Hibernate Validator 6.2.5.Final
+2023-06-05 17:07:16 -Starting ServiceApplication using Java 1.8.0_74 on LAPTOP-2139FFKM with PID 31716 (D:\IdeaProject\im-system\service\target\classes started by syx in D:\IdeaProject\im-system)
+2023-06-05 17:07:16 -The following 1 profile is active: "dev"
+2023-06-05 17:07:16 -Multiple Spring Data modules found, entering strict repository configuration mode
+2023-06-05 17:07:16 -Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2023-06-05 17:07:16 -Finished Spring Data repository scanning in 8 ms. Found 0 Redis repository interfaces.
+2023-06-05 17:07:17 -Tomcat initialized with port(s): 8000 (http)
+2023-06-05 17:07:17 -Initializing ProtocolHandler ["http-nio-8000"]
+2023-06-05 17:07:17 -Starting service [Tomcat]
+2023-06-05 17:07:17 -Starting Servlet engine: [Apache Tomcat/9.0.75]
+2023-06-05 17:07:17 -Initializing Spring embedded WebApplicationContext
+2023-06-05 17:07:17 -Root WebApplicationContext: initialization completed in 937 ms
+2023-06-05 17:07:18 -Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'imFriendShipController': Unsatisfied dependency expressed through field 'imFriendShipService'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'imFriendServiceImpl': Unsatisfied dependency expressed through field 'imFriendService'; nested exception is org.springframework.beans.factory.BeanCurrentlyInCreationException: Error creating bean with name 'imFriendServiceImpl': Requested bean is currently in creation: Is there an unresolvable circular reference?
+2023-06-05 17:07:18 -Stopping service [Tomcat]
+2023-06-05 17:07:18 -
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2023-06-05 17:07:18 -
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+The dependencies of some of the beans in the application context form a cycle:
+
+   imFriendShipController (field com.itsyx.im.service.friendship.service.ImFriendService com.itsyx.im.service.friendship.controller.ImFriendShipController.imFriendShipService)
+┌─────┐
+|  imFriendServiceImpl (field com.itsyx.im.service.friendship.service.ImFriendService com.itsyx.im.service.friendship.service.impl.ImFriendServiceImpl.imFriendService)
+└─────┘
+
+
+Action:
+
+Relying upon circular references is discouraged and they are prohibited by default. Update your application to remove the dependency cycle between beans. As a last resort, it may be possible to break the cycle automatically by setting spring.main.allow-circular-references to true.
+
+2023-06-05 17:11:06 -HV000001: Hibernate Validator 6.2.5.Final
+2023-06-05 17:11:06 -Starting ServiceApplication using Java 1.8.0_74 on LAPTOP-2139FFKM with PID 10096 (D:\IdeaProject\im-system\service\target\classes started by syx in D:\IdeaProject\im-system)
+2023-06-05 17:11:06 -The following 1 profile is active: "dev"
+2023-06-05 17:11:07 -Multiple Spring Data modules found, entering strict repository configuration mode
+2023-06-05 17:11:07 -Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2023-06-05 17:11:07 -Finished Spring Data repository scanning in 8 ms. Found 0 Redis repository interfaces.
+2023-06-05 17:11:07 -Tomcat initialized with port(s): 8000 (http)
+2023-06-05 17:11:07 -Initializing ProtocolHandler ["http-nio-8000"]
+2023-06-05 17:11:07 -Starting service [Tomcat]
+2023-06-05 17:11:07 -Starting Servlet engine: [Apache Tomcat/9.0.75]
+2023-06-05 17:11:07 -Initializing Spring embedded WebApplicationContext
+2023-06-05 17:11:07 -Root WebApplicationContext: initialization completed in 945 ms
+2023-06-05 17:11:08 -Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'imFriendShipController': Unsatisfied dependency expressed through field 'imFriendShipService'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'imFriendServiceImpl': Unsatisfied dependency expressed through field 'imFriendShipRequestService'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'imFriendShipRequestServiceImpl': Unsatisfied dependency expressed through field 'imFriendShipService'; nested exception is org.springframework.beans.factory.BeanCurrentlyInCreationException: Error creating bean with name 'imFriendServiceImpl': Requested bean is currently in creation: Is there an unresolvable circular reference?
+2023-06-05 17:11:08 -Stopping service [Tomcat]
+2023-06-05 17:11:08 -
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2023-06-05 17:11:08 -
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+The dependencies of some of the beans in the application context form a cycle:
+
+   imFriendShipController (field com.itsyx.im.service.friendship.service.ImFriendService com.itsyx.im.service.friendship.controller.ImFriendShipController.imFriendShipService)
+┌─────┐
+|  imFriendServiceImpl (field com.itsyx.im.service.friendship.service.ImFriendShipRequestService com.itsyx.im.service.friendship.service.impl.ImFriendServiceImpl.imFriendShipRequestService)
+↑     ↓
+|  imFriendShipRequestServiceImpl (field com.itsyx.im.service.friendship.service.ImFriendService com.itsyx.im.service.friendship.service.impl.ImFriendShipRequestServiceImpl.imFriendShipService)
+└─────┘
+
+
+Action:
+
+Relying upon circular references is discouraged and they are prohibited by default. Update your application to remove the dependency cycle between beans. As a last resort, it may be possible to break the cycle automatically by setting spring.main.allow-circular-references to true.
+
+2023-06-05 17:13:29 -HV000001: Hibernate Validator 6.2.5.Final
+2023-06-05 17:13:29 -Starting ServiceApplication using Java 1.8.0_74 on LAPTOP-2139FFKM with PID 28700 (D:\IdeaProject\im-system\service\target\classes started by syx in D:\IdeaProject\im-system)
+2023-06-05 17:13:29 -The following 1 profile is active: "dev"
+2023-06-05 17:13:30 -Multiple Spring Data modules found, entering strict repository configuration mode
+2023-06-05 17:13:30 -Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2023-06-05 17:13:30 -Finished Spring Data repository scanning in 8 ms. Found 0 Redis repository interfaces.
+2023-06-05 17:13:30 -Tomcat initialized with port(s): 8000 (http)
+2023-06-05 17:13:30 -Initializing ProtocolHandler ["http-nio-8000"]
+2023-06-05 17:13:30 -Starting service [Tomcat]
+2023-06-05 17:13:30 -Starting Servlet engine: [Apache Tomcat/9.0.75]
+2023-06-05 17:13:30 -Initializing Spring embedded WebApplicationContext
+2023-06-05 17:13:30 -Root WebApplicationContext: initialization completed in 968 ms
+2023-06-05 17:13:31 -Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'imFriendShipGroupController': Unsatisfied dependency expressed through field 'imFriendShipGroupService'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'imFriendShipGroupServiceImpl': Unsatisfied dependency expressed through field 'imFriendShipGroupMemberService'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'imFriendShipGroupMemberServiceImpl': Unsatisfied dependency expressed through field 'imFriendShipGroupService'; nested exception is org.springframework.beans.factory.BeanCurrentlyInCreationException: Error creating bean with name 'imFriendShipGroupServiceImpl': Requested bean is currently in creation: Is there an unresolvable circular reference?
+2023-06-05 17:13:31 -Stopping service [Tomcat]
+2023-06-05 17:13:31 -
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2023-06-05 17:13:31 -
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+The dependencies of some of the beans in the application context form a cycle:
+
+   imFriendShipGroupController (field com.itsyx.im.service.friendship.service.ImFriendShipGroupService com.itsyx.im.service.friendship.controller.ImFriendShipGroupController.imFriendShipGroupService)
+┌─────┐
+|  imFriendShipGroupServiceImpl (field com.itsyx.im.service.friendship.service.ImFriendShipGroupMemberService com.itsyx.im.service.friendship.service.impl.ImFriendShipGroupServiceImpl.imFriendShipGroupMemberService)
+↑     ↓
+|  imFriendShipGroupMemberServiceImpl (field com.itsyx.im.service.friendship.service.ImFriendShipGroupService com.itsyx.im.service.friendship.service.impl.ImFriendShipGroupMemberServiceImpl.imFriendShipGroupService)
+└─────┘
+
+
+Action:
+
+Relying upon circular references is discouraged and they are prohibited by default. Update your application to remove the dependency cycle between beans. As a last resort, it may be possible to break the cycle automatically by setting spring.main.allow-circular-references to true.
+
+2023-06-05 17:15:05 -HV000001: Hibernate Validator 6.2.5.Final
+2023-06-05 17:15:05 -Starting ServiceApplication using Java 1.8.0_74 on LAPTOP-2139FFKM with PID 29252 (D:\IdeaProject\im-system\service\target\classes started by syx in D:\IdeaProject\im-system)
+2023-06-05 17:15:05 -The following 1 profile is active: "dev"
+2023-06-05 17:15:06 -Multiple Spring Data modules found, entering strict repository configuration mode
+2023-06-05 17:15:06 -Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2023-06-05 17:15:06 -Finished Spring Data repository scanning in 9 ms. Found 0 Redis repository interfaces.
+2023-06-05 17:15:06 -Tomcat initialized with port(s): 8000 (http)
+2023-06-05 17:15:06 -Initializing ProtocolHandler ["http-nio-8000"]
+2023-06-05 17:15:06 -Starting service [Tomcat]
+2023-06-05 17:15:06 -Starting Servlet engine: [Apache Tomcat/9.0.75]
+2023-06-05 17:15:06 -Initializing Spring embedded WebApplicationContext
+2023-06-05 17:15:06 -Root WebApplicationContext: initialization completed in 984 ms
+2023-06-05 17:15:07 -Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'imFriendShipGroupController': Unsatisfied dependency expressed through field 'imFriendShipGroupMemberService'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'imFriendShipGroupMemberServiceImpl': Unsatisfied dependency expressed through field 'thisService'; nested exception is org.springframework.beans.factory.BeanCurrentlyInCreationException: Error creating bean with name 'imFriendShipGroupMemberServiceImpl': Requested bean is currently in creation: Is there an unresolvable circular reference?
+2023-06-05 17:15:07 -Stopping service [Tomcat]
+2023-06-05 17:15:07 -
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2023-06-05 17:15:07 -
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+The dependencies of some of the beans in the application context form a cycle:
+
+   imFriendShipGroupController (field com.itsyx.im.service.friendship.service.ImFriendShipGroupMemberService com.itsyx.im.service.friendship.controller.ImFriendShipGroupController.imFriendShipGroupMemberService)
+┌─────┐
+|  imFriendShipGroupMemberServiceImpl (field com.itsyx.im.service.friendship.service.ImFriendShipGroupMemberService com.itsyx.im.service.friendship.service.impl.ImFriendShipGroupMemberServiceImpl.thisService)
+└─────┘
+
+
+Action:
+
+Relying upon circular references is discouraged and they are prohibited by default. Update your application to remove the dependency cycle between beans. As a last resort, it may be possible to break the cycle automatically by setting spring.main.allow-circular-references to true.
+
+2023-06-05 17:17:26 -HV000001: Hibernate Validator 6.2.5.Final
+2023-06-05 17:17:26 -Starting ServiceApplication using Java 1.8.0_74 on LAPTOP-2139FFKM with PID 30384 (D:\IdeaProject\im-system\service\target\classes started by syx in D:\IdeaProject\im-system)
+2023-06-05 17:17:26 -The following 1 profile is active: "dev"
+2023-06-05 17:17:27 -Multiple Spring Data modules found, entering strict repository configuration mode
+2023-06-05 17:17:27 -Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2023-06-05 17:17:27 -Finished Spring Data repository scanning in 9 ms. Found 0 Redis repository interfaces.
+2023-06-05 17:17:27 -Tomcat initialized with port(s): 8000 (http)
+2023-06-05 17:17:27 -Initializing ProtocolHandler ["http-nio-8000"]
+2023-06-05 17:17:27 -Starting service [Tomcat]
+2023-06-05 17:17:27 -Starting Servlet engine: [Apache Tomcat/9.0.75]
+2023-06-05 17:17:27 -Initializing Spring embedded WebApplicationContext
+2023-06-05 17:17:27 -Root WebApplicationContext: initialization completed in 987 ms
+2023-06-05 17:17:28 -Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'imFriendShipGroupController': Unsatisfied dependency expressed through field 'imFriendShipGroupMemberService'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'imFriendShipGroupMemberServiceImpl': Unsatisfied dependency expressed through field 'thisService'; nested exception is org.springframework.beans.factory.BeanCurrentlyInCreationException: Error creating bean with name 'imFriendShipGroupMemberServiceImpl': Requested bean is currently in creation: Is there an unresolvable circular reference?
+2023-06-05 17:17:28 -Stopping service [Tomcat]
+2023-06-05 17:17:28 -
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2023-06-05 17:17:28 -
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+The dependencies of some of the beans in the application context form a cycle:
+
+   imFriendShipGroupController (field com.itsyx.im.service.friendship.service.ImFriendShipGroupMemberService com.itsyx.im.service.friendship.controller.ImFriendShipGroupController.imFriendShipGroupMemberService)
+┌─────┐
+|  imFriendShipGroupMemberServiceImpl (field com.itsyx.im.service.friendship.service.ImFriendShipGroupMemberService com.itsyx.im.service.friendship.service.impl.ImFriendShipGroupMemberServiceImpl.thisService)
+└─────┘
+
+
+Action:
+
+Relying upon circular references is discouraged and they are prohibited by default. Update your application to remove the dependency cycle between beans. As a last resort, it may be possible to break the cycle automatically by setting spring.main.allow-circular-references to true.
+
+2023-06-05 17:20:09 -HV000001: Hibernate Validator 6.2.5.Final
+2023-06-05 17:20:09 -Starting ServiceApplication using Java 1.8.0_74 on LAPTOP-2139FFKM with PID 7688 (D:\IdeaProject\im-system\service\target\classes started by syx in D:\IdeaProject\im-system)
+2023-06-05 17:20:09 -The following 1 profile is active: "dev"
+2023-06-05 17:20:09 -Multiple Spring Data modules found, entering strict repository configuration mode
+2023-06-05 17:20:09 -Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2023-06-05 17:20:09 -Finished Spring Data repository scanning in 16 ms. Found 0 Redis repository interfaces.
+2023-06-05 17:20:10 -Tomcat initialized with port(s): 8000 (http)
+2023-06-05 17:20:10 -Initializing ProtocolHandler ["http-nio-8000"]
+2023-06-05 17:20:10 -Starting service [Tomcat]
+2023-06-05 17:20:10 -Starting Servlet engine: [Apache Tomcat/9.0.75]
+2023-06-05 17:20:10 -Initializing Spring embedded WebApplicationContext
+2023-06-05 17:20:10 -Root WebApplicationContext: initialization completed in 932 ms
+2023-06-05 17:20:11 -Starting ProtocolHandler ["http-nio-8000"]
+2023-06-05 17:20:11 -Tomcat started on port(s): 8000 (http) with context path ''
+2023-06-05 17:20:11 -Started ServiceApplication in 2.412 seconds (JVM running for 3.272)
+2023-06-05 17:28:32 -HV000001: Hibernate Validator 6.2.5.Final
+2023-06-05 17:28:32 -Starting ServiceApplication using Java 1.8.0_74 on LAPTOP-2139FFKM with PID 19940 (D:\IdeaProject\im-system\service\target\classes started by syx in D:\IdeaProject\im-system)
+2023-06-05 17:28:32 -The following 1 profile is active: "dev"
+2023-06-05 17:28:32 -Multiple Spring Data modules found, entering strict repository configuration mode
+2023-06-05 17:28:32 -Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2023-06-05 17:28:32 -Finished Spring Data repository scanning in 9 ms. Found 0 Redis repository interfaces.
+2023-06-05 17:28:33 -Tomcat initialized with port(s): 8000 (http)
+2023-06-05 17:28:33 -Initializing ProtocolHandler ["http-nio-8000"]
+2023-06-05 17:28:33 -Starting service [Tomcat]
+2023-06-05 17:28:33 -Starting Servlet engine: [Apache Tomcat/9.0.75]
+2023-06-05 17:28:33 -Initializing Spring embedded WebApplicationContext
+2023-06-05 17:28:33 -Root WebApplicationContext: initialization completed in 1050 ms
+2023-06-05 17:28:34 -Starting ProtocolHandler ["http-nio-8000"]
+2023-06-05 17:28:34 -Tomcat started on port(s): 8000 (http) with context path ''
+2023-06-05 17:28:34 -Started ServiceApplication in 2.524 seconds (JVM running for 3.206)
+2023-06-05 20:21:36 -HV000001: Hibernate Validator 6.2.5.Final
+2023-06-05 20:21:36 -Starting ServiceApplication using Java 1.8.0_74 on LAPTOP-2139FFKM with PID 14204 (D:\IdeaProject\im-system\service\target\classes started by syx in D:\IdeaProject\im-system)
+2023-06-05 20:21:36 -The following 1 profile is active: "dev"
+2023-06-05 20:21:37 -Multiple Spring Data modules found, entering strict repository configuration mode
+2023-06-05 20:21:37 -Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2023-06-05 20:21:37 -Finished Spring Data repository scanning in 9 ms. Found 0 Redis repository interfaces.
+2023-06-05 20:21:37 -Tomcat initialized with port(s): 8000 (http)
+2023-06-05 20:21:37 -Initializing ProtocolHandler ["http-nio-8000"]
+2023-06-05 20:21:37 -Starting service [Tomcat]
+2023-06-05 20:21:37 -Starting Servlet engine: [Apache Tomcat/9.0.75]
+2023-06-05 20:21:37 -Initializing Spring embedded WebApplicationContext
+2023-06-05 20:21:37 -Root WebApplicationContext: initialization completed in 1026 ms
+2023-06-05 20:21:38 -Starting ProtocolHandler ["http-nio-8000"]
+2023-06-05 20:21:38 -Tomcat started on port(s): 8000 (http) with context path ''
+2023-06-05 20:21:38 -Started ServiceApplication in 2.53 seconds (JVM running for 3.442)
+2023-06-05 22:44:34 -Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-06-05 22:44:34 -Initializing Servlet 'dispatcherServlet'
+2023-06-05 22:44:34 -Completed initialization in 24 ms
+2023-06-05 22:44:34 -HikariPool-1 - Starting...
+2023-06-05 22:44:35 -HikariPool-1 - Start completed.
+2023-06-05 22:56:32 -HikariPool-1 - Shutdown initiated...
+2023-06-05 22:56:32 -HikariPool-1 - Shutdown completed.
+2023-06-05 22:56:40 -HV000001: Hibernate Validator 6.2.5.Final
+2023-06-05 22:56:40 -Starting ServiceApplication using Java 1.8.0_74 on LAPTOP-2139FFKM with PID 20416 (D:\IdeaProject\im-system\service\target\classes started by syx in D:\IdeaProject\im-system)
+2023-06-05 22:56:40 -The following 1 profile is active: "dev"
+2023-06-05 22:56:41 -Multiple Spring Data modules found, entering strict repository configuration mode
+2023-06-05 22:56:41 -Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2023-06-05 22:56:41 -Finished Spring Data repository scanning in 17 ms. Found 0 Redis repository interfaces.
+2023-06-05 22:56:42 -Tomcat initialized with port(s): 8000 (http)
+2023-06-05 22:56:42 -Initializing ProtocolHandler ["http-nio-8000"]
+2023-06-05 22:56:42 -Starting service [Tomcat]
+2023-06-05 22:56:42 -Starting Servlet engine: [Apache Tomcat/9.0.75]
+2023-06-05 22:56:42 -Initializing Spring embedded WebApplicationContext
+2023-06-05 22:56:42 -Root WebApplicationContext: initialization completed in 1689 ms
+2023-06-05 22:56:43 -Starting ProtocolHandler ["http-nio-8000"]
+2023-06-05 22:56:43 -Tomcat started on port(s): 8000 (http) with context path ''
+2023-06-05 22:56:43 -Started ServiceApplication in 3.761 seconds (JVM running for 5.031)
+2023-06-05 22:56:53 -Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-06-05 22:56:53 -Initializing Servlet 'dispatcherServlet'
+2023-06-05 22:56:53 -Completed initialization in 1 ms
+2023-06-05 22:56:53 -HikariPool-1 - Starting...
+2023-06-05 22:56:53 -HikariPool-1 - Start completed.
+2023-06-05 23:25:04 -HikariPool-1 - Shutdown initiated...
+2023-06-05 23:25:04 -HikariPool-1 - Shutdown completed.
+2023-06-05 23:25:08 -HV000001: Hibernate Validator 6.2.5.Final
+2023-06-05 23:25:08 -Starting ServiceApplication using Java 1.8.0_74 on LAPTOP-2139FFKM with PID 32704 (D:\IdeaProject\im-system\service\target\classes started by syx in D:\IdeaProject\im-system)
+2023-06-05 23:25:08 -The following 1 profile is active: "dev"
+2023-06-05 23:25:08 -Multiple Spring Data modules found, entering strict repository configuration mode
+2023-06-05 23:25:08 -Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2023-06-05 23:25:08 -Finished Spring Data repository scanning in 9 ms. Found 0 Redis repository interfaces.
+2023-06-05 23:25:09 -Tomcat initialized with port(s): 8000 (http)
+2023-06-05 23:25:09 -Initializing ProtocolHandler ["http-nio-8000"]
+2023-06-05 23:25:09 -Starting service [Tomcat]
+2023-06-05 23:25:09 -Starting Servlet engine: [Apache Tomcat/9.0.75]
+2023-06-05 23:25:09 -Initializing Spring embedded WebApplicationContext
+2023-06-05 23:25:09 -Root WebApplicationContext: initialization completed in 929 ms
+2023-06-05 23:25:10 -Starting ProtocolHandler ["http-nio-8000"]
+2023-06-05 23:25:10 -Tomcat started on port(s): 8000 (http) with context path ''
+2023-06-05 23:25:10 -Started ServiceApplication in 2.304 seconds (JVM running for 2.93)
+2023-06-05 23:25:12 -Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-06-05 23:25:12 -Initializing Servlet 'dispatcherServlet'
+2023-06-05 23:25:12 -Completed initialization in 1 ms
+2023-06-05 23:25:12 -HikariPool-1 - Starting...
+2023-06-05 23:25:12 -HikariPool-1 - Start completed.
+2023-06-05 23:53:26 -HikariPool-1 - Shutdown initiated...
+2023-06-05 23:53:26 -HikariPool-1 - Shutdown completed.
+2023-06-05 23:53:30 -HV000001: Hibernate Validator 6.2.5.Final
+2023-06-05 23:53:30 -Starting ServiceApplication using Java 1.8.0_74 on LAPTOP-2139FFKM with PID 18068 (D:\IdeaProject\im-system\service\target\classes started by syx in D:\IdeaProject\im-system)
+2023-06-05 23:53:30 -The following 1 profile is active: "dev"
+2023-06-05 23:53:30 -Multiple Spring Data modules found, entering strict repository configuration mode
+2023-06-05 23:53:30 -Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2023-06-05 23:53:30 -Finished Spring Data repository scanning in 8 ms. Found 0 Redis repository interfaces.
+2023-06-05 23:53:31 -Tomcat initialized with port(s): 8000 (http)
+2023-06-05 23:53:31 -Initializing ProtocolHandler ["http-nio-8000"]
+2023-06-05 23:53:31 -Starting service [Tomcat]
+2023-06-05 23:53:31 -Starting Servlet engine: [Apache Tomcat/9.0.75]
+2023-06-05 23:53:31 -Initializing Spring embedded WebApplicationContext
+2023-06-05 23:53:31 -Root WebApplicationContext: initialization completed in 943 ms
+2023-06-05 23:53:32 -Starting ProtocolHandler ["http-nio-8000"]
+2023-06-05 23:53:32 -Tomcat started on port(s): 8000 (http) with context path ''
+2023-06-05 23:53:32 -Started ServiceApplication in 2.331 seconds (JVM running for 3.009)
+2023-06-05 23:53:35 -Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-06-05 23:53:35 -Initializing Servlet 'dispatcherServlet'
+2023-06-05 23:53:35 -Completed initialization in 1 ms
+2023-06-05 23:53:35 -HikariPool-1 - Starting...
+2023-06-05 23:53:36 -HikariPool-1 - Start completed.

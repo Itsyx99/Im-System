@@ -1,0 +1,88 @@
+2023-06-19 00:03:49 -An unexpected connection driver error occured (Exception message: Connection reset)
+2023-06-19 00:03:49 -Channel shutdown: connection error
+2023-06-19 00:03:49 -Channel shutdown: connection error
+2023-06-19 00:03:50 -Restarting Consumer@6035dc83: tags=[[amq.ctag-tv3QEz7yd8no4DOgWckeSg]], channel=Cached Rabbit Channel: AMQChannel(amqp://syx@43.143.69.228:5672/,2), conn: Proxy@4d664323 Shared Rabbit Connection: SimpleConnection@1be3d6ca [delegate=amqp://syx@43.143.69.228:5672/, localPort= 14624], acknowledgeMode=MANUAL local queue size=0
+2023-06-19 00:03:50 -Restarting Consumer@2415aecc: tags=[[amq.ctag-o_KOrKCwa-ME9UlrBpUxQw]], channel=Cached Rabbit Channel: AMQChannel(amqp://syx@43.143.69.228:5672/,1), conn: Proxy@4d664323 Shared Rabbit Connection: SimpleConnection@1be3d6ca [delegate=amqp://syx@43.143.69.228:5672/, localPort= 14624], acknowledgeMode=MANUAL local queue size=0
+2023-06-19 00:03:50 -Attempting to connect to: [43.143.69.228:5672]
+2023-06-19 00:03:50 -Created new connection: rabbitConnectionFactory#1ad1c363:62/SimpleConnection@aef6a96 [delegate=amqp://syx@43.143.69.228:5672/, localPort= 2932]
+2023-06-19 00:04:22 -An unexpected connection driver error occured (Exception message: Connection reset)
+2023-06-19 00:04:22 -Channel shutdown: connection error
+2023-06-19 00:04:22 -Channel shutdown: connection error
+2023-06-19 00:04:23 -Restarting Consumer@12dbcbd9: tags=[[amq.ctag-ucNpOxgchWaLzKuAWk39iQ]], channel=Cached Rabbit Channel: AMQChannel(amqp://syx@43.143.69.228:5672/,1), conn: Proxy@4d664323 Shared Rabbit Connection: SimpleConnection@aef6a96 [delegate=amqp://syx@43.143.69.228:5672/, localPort= 2932], acknowledgeMode=MANUAL local queue size=0
+2023-06-19 00:04:23 -Attempting to connect to: [43.143.69.228:5672]
+2023-06-19 00:04:23 -Failed to check/redeclare auto-delete queue(s).
+org.springframework.amqp.AmqpIOException: java.net.SocketException: Network is unreachable: connect
+	at org.springframework.amqp.rabbit.support.RabbitExceptionTranslator.convertRabbitAccessException(RabbitExceptionTranslator.java:70)
+	at org.springframework.amqp.rabbit.connection.AbstractConnectionFactory.createBareConnection(AbstractConnectionFactory.java:524)
+	at org.springframework.amqp.rabbit.connection.CachingConnectionFactory.createConnection(CachingConnectionFactory.java:751)
+	at org.springframework.amqp.rabbit.connection.CachingConnectionFactory.createBareChannel(CachingConnectionFactory.java:702)
+	at org.springframework.amqp.rabbit.connection.CachingConnectionFactory.getCachedChannelProxy(CachingConnectionFactory.java:676)
+	at org.springframework.amqp.rabbit.connection.CachingConnectionFactory.getChannel(CachingConnectionFactory.java:567)
+	at org.springframework.amqp.rabbit.connection.CachingConnectionFactory.access$1600(CachingConnectionFactory.java:102)
+	at org.springframework.amqp.rabbit.connection.CachingConnectionFactory$ChannelCachingConnectionProxy.createChannel(CachingConnectionFactory.java:1439)
+	at org.springframework.amqp.rabbit.core.RabbitTemplate.doExecute(RabbitTemplate.java:2095)
+	at org.springframework.amqp.rabbit.core.RabbitTemplate.execute(RabbitTemplate.java:2062)
+	at org.springframework.amqp.rabbit.core.RabbitTemplate.execute(RabbitTemplate.java:2042)
+	at org.springframework.amqp.rabbit.core.RabbitAdmin.getQueueInfo(RabbitAdmin.java:407)
+	at org.springframework.amqp.rabbit.core.RabbitAdmin.getQueueProperties(RabbitAdmin.java:391)
+	at org.springframework.amqp.rabbit.listener.AbstractMessageListenerContainer.attemptDeclarations(AbstractMessageListenerContainer.java:1842)
+	at org.springframework.amqp.rabbit.listener.AbstractMessageListenerContainer.redeclareElementsIfNecessary(AbstractMessageListenerContainer.java:1823)
+	at org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer$AsyncMessageProcessingConsumer.initialize(SimpleMessageListenerContainer.java:1349)
+	at org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer$AsyncMessageProcessingConsumer.run(SimpleMessageListenerContainer.java:1195)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: java.net.SocketException: Network is unreachable: connect
+	at java.net.DualStackPlainSocketImpl.waitForConnect(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketConnect(DualStackPlainSocketImpl.java:85)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:589)
+	at com.rabbitmq.client.impl.SocketFrameHandlerFactory.create(SocketFrameHandlerFactory.java:60)
+	at com.rabbitmq.client.ConnectionFactory.newConnection(ConnectionFactory.java:1113)
+	at com.rabbitmq.client.ConnectionFactory.newConnection(ConnectionFactory.java:1063)
+	at org.springframework.amqp.rabbit.connection.AbstractConnectionFactory.connectAddresses(AbstractConnectionFactory.java:560)
+	at org.springframework.amqp.rabbit.connection.AbstractConnectionFactory.connect(AbstractConnectionFactory.java:533)
+	at org.springframework.amqp.rabbit.connection.AbstractConnectionFactory.createBareConnection(AbstractConnectionFactory.java:487)
+	... 16 common frames omitted
+2023-06-19 00:04:23 -Attempting to connect to: [43.143.69.228:5672]
+2023-06-19 00:04:23 -Restarting Consumer@119cad38: tags=[[amq.ctag-jPchUcE4eSmhR0oXTMll0g]], channel=Cached Rabbit Channel: AMQChannel(amqp://syx@43.143.69.228:5672/,2), conn: Proxy@4d664323 Shared Rabbit Connection: null, acknowledgeMode=MANUAL local queue size=0
+2023-06-19 00:04:23 -Attempting to connect to: [43.143.69.228:5672]
+2023-06-19 00:04:23 -Failed to check/redeclare auto-delete queue(s).
+org.springframework.amqp.AmqpIOException: java.net.SocketException: Network is unreachable: connect
+	at org.springframework.amqp.rabbit.support.RabbitExceptionTranslator.convertRabbitAccessException(RabbitExceptionTranslator.java:70)
+	at org.springframework.amqp.rabbit.connection.AbstractConnectionFactory.createBareConnection(AbstractConnectionFactory.java:524)
+	at org.springframework.amqp.rabbit.connection.CachingConnectionFactory.createConnection(CachingConnectionFactory.java:751)
+	at org.springframework.amqp.rabbit.connection.ConnectionFactoryUtils.createConnection(ConnectionFactoryUtils.java:214)
+	at org.springframework.amqp.rabbit.core.RabbitTemplate.doExecute(RabbitTemplate.java:2089)
+	at org.springframework.amqp.rabbit.core.RabbitTemplate.execute(RabbitTemplate.java:2062)
+	at org.springframework.amqp.rabbit.core.RabbitTemplate.execute(RabbitTemplate.java:2042)
+	at org.springframework.amqp.rabbit.core.RabbitAdmin.getQueueInfo(RabbitAdmin.java:407)
+	at org.springframework.amqp.rabbit.core.RabbitAdmin.getQueueProperties(RabbitAdmin.java:391)
+	at org.springframework.amqp.rabbit.listener.AbstractMessageListenerContainer.attemptDeclarations(AbstractMessageListenerContainer.java:1842)
+	at org.springframework.amqp.rabbit.listener.AbstractMessageListenerContainer.redeclareElementsIfNecessary(AbstractMessageListenerContainer.java:1823)
+	at org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer$AsyncMessageProcessingConsumer.initialize(SimpleMessageListenerContainer.java:1349)
+	at org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer$AsyncMessageProcessingConsumer.run(SimpleMessageListenerContainer.java:1195)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: java.net.SocketException: Network is unreachable: connect
+	at java.net.DualStackPlainSocketImpl.waitForConnect(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketConnect(DualStackPlainSocketImpl.java:85)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:589)
+	at com.rabbitmq.client.impl.SocketFrameHandlerFactory.create(SocketFrameHandlerFactory.java:60)
+	at com.rabbitmq.client.ConnectionFactory.newConnection(ConnectionFactory.java:1113)
+	at com.rabbitmq.client.ConnectionFactory.newConnection(ConnectionFactory.java:1063)
+	at org.springframework.amqp.rabbit.connection.AbstractConnectionFactory.connectAddresses(AbstractConnectionFactory.java:560)
+	at org.springframework.amqp.rabbit.connection.AbstractConnectionFactory.connect(AbstractConnectionFactory.java:533)
+	at org.springframework.amqp.rabbit.connection.AbstractConnectionFactory.createBareConnection(AbstractConnectionFactory.java:487)
+	... 12 common frames omitted
+2023-06-19 00:04:23 -Attempting to connect to: [43.143.69.228:5672]
+2023-06-19 00:04:28 -Restarting Consumer@6c968756: tags=[[]], channel=null, acknowledgeMode=MANUAL local queue size=0
+2023-06-19 00:04:28 -Attempting to connect to: [43.143.69.228:5672]
+2023-06-19 00:04:28 -Restarting Consumer@7ee828a7: tags=[[]], channel=null, acknowledgeMode=MANUAL local queue size=0
+2023-06-19 00:04:28 -Created new connection: rabbitConnectionFactory#1ad1c363:67/SimpleConnection@1b0d7057 [delegate=amqp://syx@43.143.69.228:5672/, localPort= 12633]

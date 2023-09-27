@@ -1,0 +1,128 @@
+2023-06-06 16:34:27 -HikariPool-1 - Shutdown initiated...
+2023-06-06 16:34:27 -HikariPool-1 - Shutdown completed.
+2023-06-06 16:34:33 -HV000001: Hibernate Validator 6.2.5.Final
+2023-06-06 16:34:33 -Starting ServiceApplication using Java 1.8.0_74 on LAPTOP-2139FFKM with PID 28360 (D:\IdeaProject\im-system\service\target\classes started by syx in D:\IdeaProject\im-system)
+2023-06-06 16:34:33 -The following 1 profile is active: "dev"
+2023-06-06 16:34:33 -Multiple Spring Data modules found, entering strict repository configuration mode
+2023-06-06 16:34:33 -Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2023-06-06 16:34:33 -Finished Spring Data repository scanning in 11 ms. Found 0 Redis repository interfaces.
+2023-06-06 16:34:34 -Tomcat initialized with port(s): 8000 (http)
+2023-06-06 16:34:34 -Initializing ProtocolHandler ["http-nio-8000"]
+2023-06-06 16:34:34 -Starting service [Tomcat]
+2023-06-06 16:34:34 -Starting Servlet engine: [Apache Tomcat/9.0.75]
+2023-06-06 16:34:34 -Initializing Spring embedded WebApplicationContext
+2023-06-06 16:34:34 -Root WebApplicationContext: initialization completed in 1010 ms
+2023-06-06 16:34:35 -Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'imGroupController': Unsatisfied dependency expressed through field 'groupService'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'imGroupServiceImpl': Unsatisfied dependency expressed through field 'imGroupDataMapper'; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'com.itsyx.im.service.group.dao.mapper.ImGroupMapper' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+2023-06-06 16:34:35 -Stopping service [Tomcat]
+2023-06-06 16:34:35 -
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2023-06-06 16:34:35 -
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Field imGroupDataMapper in com.itsyx.im.service.group.service.impl.ImGroupServiceImpl required a bean of type 'com.itsyx.im.service.group.dao.mapper.ImGroupMapper' that could not be found.
+
+The injection point has the following annotations:
+	- @org.springframework.beans.factory.annotation.Autowired(required=true)
+
+
+Action:
+
+Consider defining a bean of type 'com.itsyx.im.service.group.dao.mapper.ImGroupMapper' in your configuration.
+
+2023-06-06 16:35:43 -HV000001: Hibernate Validator 6.2.5.Final
+2023-06-06 16:35:43 -Starting ServiceApplication using Java 1.8.0_74 on LAPTOP-2139FFKM with PID 6940 (D:\IdeaProject\im-system\service\target\classes started by syx in D:\IdeaProject\im-system)
+2023-06-06 16:35:43 -The following 1 profile is active: "dev"
+2023-06-06 16:35:44 -Multiple Spring Data modules found, entering strict repository configuration mode
+2023-06-06 16:35:44 -Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2023-06-06 16:35:44 -Finished Spring Data repository scanning in 11 ms. Found 0 Redis repository interfaces.
+2023-06-06 16:35:44 -Tomcat initialized with port(s): 8000 (http)
+2023-06-06 16:35:44 -Initializing ProtocolHandler ["http-nio-8000"]
+2023-06-06 16:35:44 -Starting service [Tomcat]
+2023-06-06 16:35:44 -Starting Servlet engine: [Apache Tomcat/9.0.75]
+2023-06-06 16:35:44 -Initializing Spring embedded WebApplicationContext
+2023-06-06 16:35:44 -Root WebApplicationContext: initialization completed in 969 ms
+2023-06-06 16:35:45 -Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'imGroupController': Unsatisfied dependency expressed through field 'groupService'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'imGroupServiceImpl': Unsatisfied dependency expressed through field 'groupMemberService'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'imGroupMemberServiceImpl': Unsatisfied dependency expressed through field 'groupService'; nested exception is org.springframework.beans.factory.BeanCurrentlyInCreationException: Error creating bean with name 'imGroupServiceImpl': Requested bean is currently in creation: Is there an unresolvable circular reference?
+2023-06-06 16:35:45 -Stopping service [Tomcat]
+2023-06-06 16:35:45 -
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2023-06-06 16:35:45 -
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+The dependencies of some of the beans in the application context form a cycle:
+
+   imGroupController (field com.itsyx.im.service.group.service.ImGroupService com.itsyx.im.service.group.controller.ImGroupController.groupService)
+┌─────┐
+|  imGroupServiceImpl (field com.itsyx.im.service.group.service.ImGroupMemberService com.itsyx.im.service.group.service.impl.ImGroupServiceImpl.groupMemberService)
+↑     ↓
+|  imGroupMemberServiceImpl (field com.itsyx.im.service.group.service.ImGroupService com.itsyx.im.service.group.service.impl.ImGroupMemberServiceImpl.groupService)
+└─────┘
+
+
+Action:
+
+Relying upon circular references is discouraged and they are prohibited by default. Update your application to remove the dependency cycle between beans. As a last resort, it may be possible to break the cycle automatically by setting spring.main.allow-circular-references to true.
+
+2023-06-06 16:36:45 -HV000001: Hibernate Validator 6.2.5.Final
+2023-06-06 16:36:45 -Starting ServiceApplication using Java 1.8.0_74 on LAPTOP-2139FFKM with PID 26400 (D:\IdeaProject\im-system\service\target\classes started by syx in D:\IdeaProject\im-system)
+2023-06-06 16:36:45 -The following 1 profile is active: "dev"
+2023-06-06 16:36:45 -Multiple Spring Data modules found, entering strict repository configuration mode
+2023-06-06 16:36:45 -Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2023-06-06 16:36:45 -Finished Spring Data repository scanning in 11 ms. Found 0 Redis repository interfaces.
+2023-06-06 16:36:46 -Tomcat initialized with port(s): 8000 (http)
+2023-06-06 16:36:46 -Initializing ProtocolHandler ["http-nio-8000"]
+2023-06-06 16:36:46 -Starting service [Tomcat]
+2023-06-06 16:36:46 -Starting Servlet engine: [Apache Tomcat/9.0.75]
+2023-06-06 16:36:46 -Initializing Spring embedded WebApplicationContext
+2023-06-06 16:36:46 -Root WebApplicationContext: initialization completed in 949 ms
+2023-06-06 16:36:47 -Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'imGroupMemberController': Unsatisfied dependency expressed through field 'groupMemberService'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'imGroupMemberServiceImpl': Unsatisfied dependency expressed through field 'groupMemberService'; nested exception is org.springframework.beans.factory.BeanCurrentlyInCreationException: Error creating bean with name 'imGroupMemberServiceImpl': Requested bean is currently in creation: Is there an unresolvable circular reference?
+2023-06-06 16:36:47 -Stopping service [Tomcat]
+2023-06-06 16:36:47 -
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2023-06-06 16:36:47 -
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+The dependencies of some of the beans in the application context form a cycle:
+
+   imGroupMemberController (field com.itsyx.im.service.group.service.ImGroupMemberService com.itsyx.im.service.group.controller.ImGroupMemberController.groupMemberService)
+┌─────┐
+|  imGroupMemberServiceImpl (field com.itsyx.im.service.group.service.ImGroupMemberService com.itsyx.im.service.group.service.impl.ImGroupMemberServiceImpl.groupMemberService)
+└─────┘
+
+
+Action:
+
+Relying upon circular references is discouraged and they are prohibited by default. Update your application to remove the dependency cycle between beans. As a last resort, it may be possible to break the cycle automatically by setting spring.main.allow-circular-references to true.
+
+2023-06-06 16:37:32 -HV000001: Hibernate Validator 6.2.5.Final
+2023-06-06 16:37:32 -Starting ServiceApplication using Java 1.8.0_74 on LAPTOP-2139FFKM with PID 31372 (D:\IdeaProject\im-system\service\target\classes started by syx in D:\IdeaProject\im-system)
+2023-06-06 16:37:32 -The following 1 profile is active: "dev"
+2023-06-06 16:37:32 -Multiple Spring Data modules found, entering strict repository configuration mode
+2023-06-06 16:37:32 -Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2023-06-06 16:37:32 -Finished Spring Data repository scanning in 11 ms. Found 0 Redis repository interfaces.
+2023-06-06 16:37:32 -Tomcat initialized with port(s): 8000 (http)
+2023-06-06 16:37:32 -Initializing ProtocolHandler ["http-nio-8000"]
+2023-06-06 16:37:33 -Starting service [Tomcat]
+2023-06-06 16:37:33 -Starting Servlet engine: [Apache Tomcat/9.0.75]
+2023-06-06 16:37:33 -Initializing Spring embedded WebApplicationContext
+2023-06-06 16:37:33 -Root WebApplicationContext: initialization completed in 948 ms
+2023-06-06 16:37:34 -Starting ProtocolHandler ["http-nio-8000"]
+2023-06-06 16:37:34 -Tomcat started on port(s): 8000 (http) with context path ''
+2023-06-06 16:37:34 -Started ServiceApplication in 2.404 seconds (JVM running for 3.098)
